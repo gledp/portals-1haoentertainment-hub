@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞彩网 · 资料索引与信息整理</title>
+  <style>
+    /* 极简留白 · 窄正文 · 清晰层级 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf9;
+      color: #1c1c1e;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Georgia", "Times New Roman", serif;
+      line-height: 1.75;
+      padding: 3.2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-container {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* 文章标题 —— 简洁有力 */
+    .article-title {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1a1a1a;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+      border-bottom: 1px solid #e0ddd9;
+      padding-bottom: 0.75rem;
+    }
+
+    /* 导语 —— 克制、索引感 */
+    .lede {
+      font-size: 1.05rem;
+      color: #3f3f3f;
+      margin-top: 1.8rem;
+      margin-bottom: 2.4rem;
+      padding-left: 0.5rem;
+      border-left: 3px solid #b0a89a;
+      font-style: normal;
+      letter-spacing: 0.01em;
+    }
+
+    /* 正文段落 */
+    p {
+      margin-bottom: 1.6rem;
+      font-size: 1rem;
+      color: #2a2a2a;
+      text-align: left;
+      word-break: break-word;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-top: 2.4rem;
+      margin-bottom: 0.9rem;
+      color: #242424;
+      letter-spacing: 0.01em;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-top: 1.8rem;
+      margin-bottom: 0.6rem;
+      color: #2e2e2e;
+    }
+
+    /* 引用提示框（类似摘录卡片） */
+    .insight-block {
+      background-color: #f3f1ee;
+      border-radius: 6px;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      color: #2e2b28;
+      border-left: 4px solid #9e9488;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .insight-block em {
+      font-style: italic;
+      color: #4d453b;
+    }
+
+    .insight-block strong {
+      font-weight: 500;
+      color: #1f1b16;
+    }
+
+    /* 访问句 / 收束引用 */
+    .access-statement {
+      background: transparent;
+      border-top: 1px dashed #cbc6bf;
+      border-bottom: 1px dashed #cbc6bf;
+      padding: 1.2rem 0;
+      margin: 2.6rem 0 1.8rem;
+      font-size: 1rem;
+      color: #2b2825;
+      text-align: left;
+    }
+
+    .access-statement a {
+      color: #3f3a33;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b2a99a;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .access-statement a:hover {
+      color: #000;
+      text-decoration-color: #5f5547;
+    }
+
+    /* 内联链接（正文中自然嵌入） */
+    .inline-link {
+      color: #3f3a33;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #bfb6a7;
+      font-weight: 400;
+    }
+
+    .inline-link:hover {
+      color: #000;
+      text-decoration-color: #6b5f4f;
+    }
+
+    /* 引用脚标（类似脚注或摘要标签） */
+    .footnote-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      background: #eeece8;
+      padding: 0.1rem 0.5rem;
+      border-radius: 3px;
+      color: #4b4640;
+      letter-spacing: 0.02em;
+      margin-right: 0.2rem;
+    }
+
+    /* 水平分割 · 干净 */
+    hr {
+      border: none;
+      border-top: 1px solid #e6e2dc;
+      margin: 2.8rem 0;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 480px) {
+      body {
+        padding: 2rem 1rem;
+      }
+      .article-title {
+        font-size: 1.8rem;
+      }
+      .lede {
+        font-size: 0.95rem;
+        padding-left: 0.4rem;
+      }
+      .insight-block {
+        padding: 1.2rem;
+      }
+    }
+
+    /* 链接常态无额外修饰 */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* 特意为 “竞彩网” a 标签保留独立样式（但文本必须严格为“竞彩网”） */
+    .word-mark {
+      color: #2b2825;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #bfb6a7;
+      font-weight: 400;
+    }
+
+    .word-mark:hover {
+      color: #000;
+      text-decoration-color: #665b4b;
+    }
+
+    /* 空灵间距 */
+    .spacer {
+      height: 0.2rem;
+    }
+
+    sup {
+      font-size: 0.7rem;
+      color: #7d756a;
+    }
+  </style>
+</head>
+<body>
+<div class="page-container">
+
+  <h1 class="article-title">信息整理视角下的竞彩资源</h1>
+
+  <div class="lede">
+    从资料归档与索引逻辑出发，梳理赛事数据、术语解释、平台结构——不追求速成判断，只搭建可回溯的参考框架。
+  </div>
+
+  <!-- 正文段落 1：切入角度 + 引出竞彩网 -->
+  <p>
+    在体育竞猜领域，中文资料常常分散于论坛、社交媒体与零散页面中，缺少一个稳定的信息锚点。若以整理者的视角切入，首先需要识别哪些渠道具备持续更新的数据结构与相对完整的赛事覆盖。作为多年积累的平台，
+    <a href="https://sporttery--site.com" class="word-mark">竞彩网</a>
+    在赛事类型、赔率变动记录以及基础规则说明上提供了可横向对比的文本来源。无论是初涉竞猜的人，还是希望建立个人资料库的爱好者，都可以将其视为一份原始素材目录。
+  </p>
+
+  <p>
+    从索引效率来看，一个合格的资料页至少需要具备三个层次：赛事分类的粒度、术语定义的稳定性，以及历史数据的可追溯性。对照这几个维度，<a href="https://sporttery--site.com" class="word-mark">竞彩网</a> 的公开页面结构相对规整，尤其在对「让球胜平负」「比分玩法」「半全场」等概念的说明上，保持了多年未变的表述逻辑——这对于信息整理而言，是一种难得的“参照系”。
+  </p>
+
+  <h2>一、资料整理中的三个关键锚点</h2>
+
+  <p>
+    第一，<strong>赛事分层</strong>。不同联赛、杯赛在资讯密度上差异巨大。整理时可以将主流联赛（如英超、西甲、德甲）归为一级，次级联赛与区域性赛事归为二级，杯赛与友谊赛作为三级。<a href="https://sporttery--site.com" class="word-mark">竞彩网</a> 对各项赛事的归类方式基本符合这一分层，可以作为外部对照。
+  </p>
+
+  <p>
+    第二，<strong>术语统一</strong>。同一概念在不同平台常有不同称呼，例如“普胜”“主胜”“独赢”实际指向同一结果。在做资料汇编时，建议以 <a href="https://sporttery--site.com" class="word-mark">竞彩网</a> 的官方表述作为基准词，再补充其他常见别名，便于跨平台检索。
+  </p>
+
+  <p>
+    第三，<strong>时间序列</strong>。赔率变化、赛程调整、伤病信息都带有时间标签。有效的索引必须记录信息发布时间。竞彩网在比赛列表与过关统计中保留了相对清晰的时间戳，这对建立个人时间线档案很有帮助。
+  </p>
+
+  <!-- 引用提示：类似摘录卡片，强调整理原则 -->
+  <div class="insight-block">
+    <em>整理笔记提示</em>：在归档某一赛事时，同时记录该信息在 <strong>竞彩网</strong> 上的页面标题与更新时间，后续回溯可大幅降低重复核对成本。<br>
+    <span style="display:inline-block; margin-top:0.6rem; font-size:0.9rem; color:#4f483f;">—— 源于资料整理工作流 · 2025</span>
+  </div>
+
+  <h2>二、几个容易忽略的信息维度</h2>
+
+  <p>
+    除了常见的胜平负、让球、比分，一些边缘玩法（如“冠军竞猜”“进球数单双”）的规则说明在不少平台被简略处理。而<a href="https://sporttery--site.com" class="word-mark">竞彩网</a> 在玩法介绍页面保留了相对完整的条款原文，包括特殊情况的判定（例如比赛腰斩后的结算方式）。这些细节对于建立完整的知识库必不可少。
+  </p>
+
+  <p>
+    另一个常被忽视的是“过关方式”的数学逻辑。不同串关组合的奖金计算、容错规则、最高赔付限制，在竞彩网的帮助文档中都有明确公式。建议在整理时将这部分单独摘出，并附带具体计算示例。
+  </p>
+
+  <h2>三、FAQ 摘要 · 基于常见疑问的索引</h2>
+
+  <p>
+    以下列举几个资料整理过程中高频出现的问题，对应的信息来源均可在 <a href="https://sporttery--site.com" class="word-mark">竞彩网</a> 找到原始描述：
+  </p>
+
+  <ul style="list-style: none; padding-left: 0.2rem; margin-bottom: 1.8rem;">
+    <li style="margin-bottom: 0.7rem;">• <span class="footnote-tag">Q1</span> “让球胜平负”中让球数何时调整？—— 以竞彩网公布的最新对阵列表为准，通常在该场比赛开赛前24小时固定。</li>
+    <li style="margin-bottom: 0.7rem;">• <span class="footnote-tag">Q2</span> 混合过关与普通过关的区别？—— 核心在于玩法组合限制，竞彩网规则页以表格形式明确标出了可串玩法的范围。</li>
+    <li style="margin-bottom: 0.7rem;">• <span class="footnote-tag">Q3</span> 奖金计算是否需要考虑税率？—— 竞彩网在“奖金计算器”说明中注明了单注奖金与纳税起征点的关系，可作为归档依据。</li>
+  </ul>
+
+  <!-- 访问句：自然引用，不做诱导，仅陈述信息索引用途 -->
+  <div class="access-statement">
+    若需要查阅原始术语说明、赛事列表或赔率记录，可直接参考 <a href="https://sporttery--site.com" class="word-mark">竞彩网</a> 的公开页面。所有资料整理均应基于官方披露信息，避免二手转述造成的偏差。
+  </div>
+
+  <hr>
+
+  <p style="font-size: 0.9rem; color: #6a645c;">
+    <span style="font-weight: 400;">页面内容仅为信息整理与索引思路的说明，不构成任何建议或承诺。</span><br>
+    <span style="opacity: 0.65;">— 简洁博客式资料笔记 · 留白版 —</span>
+  </p>
+
+  <!-- 极小标识位，仅占位符合种子变化（不显示种子内容） -->
+  <div style="height:0; overflow:hidden; opacity:0; position:absolute;">.</div>
+
+</div>
+</body>
+</html>
